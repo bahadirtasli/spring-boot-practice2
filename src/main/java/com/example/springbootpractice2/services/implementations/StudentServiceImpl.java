@@ -1,8 +1,11 @@
 package com.example.springbootpractice2.services.implementations;
 
+import com.example.springbootpractice2.exceptions.CourseNotFoundException;
 import com.example.springbootpractice2.exceptions.StudentNotFoundException;
+import com.example.springbootpractice2.models.Course;
 import com.example.springbootpractice2.models.Student;
 import com.example.springbootpractice2.repositories.StudentRepository;
+import com.example.springbootpractice2.services.CourseService;
 import com.example.springbootpractice2.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +23,14 @@ import java.util.Optional;
 public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private CourseService courseService;
     @Override
-    public void createStudent(Student student) {
+    public void createStudent(Student student) throws CourseNotFoundException {
+        for (Course course : student.getCourses()){
+            courseService.findCourseById(course.getId());
+        }
         student.setActive(true);
         studentRepository.save(student);
 

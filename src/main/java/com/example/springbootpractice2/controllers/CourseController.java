@@ -19,7 +19,7 @@ import java.util.List;
  * @Date 3/7/2023
  */
 
-@Controller
+@RestController
 @RequestMapping("/course")
 public class CourseController {
     @Autowired

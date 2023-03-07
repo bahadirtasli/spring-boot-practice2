@@ -1,5 +1,6 @@
 package com.example.springbootpractice2.services;
 
+import com.example.springbootpractice2.exceptions.CourseNotFoundException;
 import com.example.springbootpractice2.exceptions.SchoolNotFoundException;
 import com.example.springbootpractice2.exceptions.StudentNotFoundException;
 import com.example.springbootpractice2.models.School;
@@ -20,7 +21,7 @@ public interface StudentService {
      * @param student Student
      */
 
-    void createStudent(Student student);
+    void createStudent(Student student) throws CourseNotFoundException;
 
 
     /**

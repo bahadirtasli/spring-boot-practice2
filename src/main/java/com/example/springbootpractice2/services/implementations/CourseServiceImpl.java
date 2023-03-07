@@ -25,6 +25,7 @@ public class CourseServiceImpl implements CourseService {
     public void createCourse(Course course) {
         course.setActive(true);
         courseRepository.save(course);
+        
 
     }
 
