@@ -42,7 +42,7 @@ public interface StudentService {
      *
      * @return a list of Student
      */
-    List<Student> findAllSchools();
+    List<Student> findAllStudents();
 
     /**
      * To update an existing Student
