@@ -1,4 +1,5 @@
 package com.example.springbootpractice2.controllers;
+import com.example.springbootpractice2.exceptions.CourseNotFoundException;
 import com.example.springbootpractice2.exceptions.StudentNotFoundException;
 import com.example.springbootpractice2.models.Student;
 import com.example.springbootpractice2.services.StudentService;
@@ -47,7 +48,7 @@ public class StudentController {
 
     // Called when we press submit button in the create-school form
     @PostMapping
-    public ResponseEntity<?> createStudent(@RequestBody Student student) {
+    public ResponseEntity<?> createStudent(@RequestBody Student student) throws CourseNotFoundException {
         try {
             Student searchStudent = studentService.findStudentByName(student.getName());
             throw new RuntimeException("School already exists! Cannot create this school!");
