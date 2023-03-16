@@ -32,6 +32,7 @@ public class Teacher extends Auditable <String> implements Serializable /*Java.i
     @OneToMany(cascade = CascadeType.ALL)
     private List<Course> specializedCourses;
 
+    private boolean isActive;
 
 
 }

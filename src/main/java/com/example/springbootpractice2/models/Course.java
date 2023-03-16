@@ -34,4 +34,6 @@ public class Course extends Auditable <String> implements Serializable /*Java.io
 
     @OneToOne(cascade = CascadeType.MERGE)
     private School school;
+
+    private boolean isActive;
 }

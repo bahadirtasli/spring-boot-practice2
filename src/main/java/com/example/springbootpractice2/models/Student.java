@@ -1,9 +1,9 @@
 package com.example.springbootpractice2.models;
 
-import jakarta.persistence.*;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -36,6 +36,7 @@ public class Student extends Auditable <String> implements Serializable /*Java.i
     @OneToMany(cascade = CascadeType.ALL)
     private List<Course> courses;
 
+    private boolean isActive;
 
 
 }
